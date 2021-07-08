@@ -1,0 +1,22 @@
+# Programs to run
+fitgeoid1: c:\x-val\bin\fitgeoid1.exe
+gbin: c:\x-val\bin\gbin.exe
+geoid: c:\x-val\bin\geoid.exe
+
+# Output path
+output_path: __cv__
+
+# Input data
+geoid_gravimetric: c:\x-val\input\gravgeoid2021.gri
+gps_measurements: c:\x-val\input\158_7p_4mm.n
+
+# File names for generated input and output in each work directory
+geoid_fitted: fg7p_4.gri
+gps_measurements_subset: 158_7p_4mm_subset.n
+
+geoid_fitted_bin: fg7p_4.bin
+
+point_excluded: point_excluded.dat
+point_interpolated: point_interpolated.dat
+
+points_gathered: 158_7p_4mm_gathered.csv
