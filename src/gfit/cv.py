@@ -3,21 +3,16 @@
 Leave-one-out geoid fit
 
 Caution:
-    With 157 points tested as input, this program starts
-    157 parallel processes of the program fitgeoid1.exe
-    producing an output of size more than 1.22 GB.
+    For its intended use, this program produces an output of size more than 1 GB.
 
 """
 
 """
 TODO:
-    Switch to JSON-format for configuration, if it is easier to use builtin Python functionality.
-    Make this a package that can be installed and used in any prompt where its venv is activated.
-    Configuration search:
+    Possible configuration search additions:
         Use configuration file given at the command line.
         If not present, search for config file in user's home directory.
-    Add output directories to configuration file?
-    Let everything be set from the command line?
+        Finally, let everything be set from the command line.
 
 """
 
