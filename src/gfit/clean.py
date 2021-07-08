@@ -24,8 +24,8 @@ def main():
     extensions = ('.in', '.out', '.err', '.done')
     fnames = []
     for ext in extensions:
-        if answered_yes(f'Clean up files ending with {ext!r}?')
-        fnames.extend(output_path.glob(f'**/*{ext}'))
+        if answered_yes(f'Clean up files ending with {ext!r}?'):
+            fnames.extend(output_path.glob(f'**/*{ext}'))
 
     for fname in fnames:
         print(f'Deleting {fname=}')
