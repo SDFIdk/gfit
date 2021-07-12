@@ -1,0 +1,12 @@
+# Generated during test runs
+.pytest_cache
+__pycache__
+
+# Mkdocs
+site
+
+# Default config.yaml setting
+__cv__
+
+# config.yaml used during development.
+config.yaml
