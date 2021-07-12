@@ -1,0 +1,9 @@
+name: gfit-dev
+channels:
+- conda-forge
+dependencies:
+- pyyaml
+- pandas
+
+- pytest
+- mkdocs-material
