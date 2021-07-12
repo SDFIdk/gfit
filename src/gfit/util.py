@@ -3,7 +3,7 @@ import pathlib
 import collections as cs
 import re
 
-TAB = re.compile(r'\t+')
+TAB = re.compile(r'\s+')
 
 
 def make_subsets(lines):
