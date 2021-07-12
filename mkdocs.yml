@@ -1,0 +1,80 @@
+# Project information
+site_name: Geoide-fit med krydsvalidering
+site_description: 
+site_author: Joachim Mortensen
+docs_dir: docs/
+
+# Repository
+repo_name: gfit
+repo_url: https://github.com/Kortforsyningen/gfit
+
+# Copyright
+# copyright: ''
+
+# Configuration
+theme:
+  name: material
+
+  language: en
+  features:
+  - tabs
+
+  palette:
+    primary: green
+    accent: green
+
+# Plugins
+plugins:
+- search
+
+# Extensions in use
+markdown_extensions:
+- markdown.extensions.admonition
+# - markdown.extensions.attr_list
+# - markdown.extensions.def_list
+- markdown.extensions.footnotes
+# - markdown.extensions.meta
+- markdown.extensions.toc:
+    permalink: true
+- pymdownx.arithmatex:
+    generic: true
+- pymdownx.betterem:
+    smart_enable: all
+# - pymdownx.caret
+# - pymdownx.critic
+# - pymdownx.details
+# - pymdownx.emoji:
+#     emoji_index: !!python/name:materialx.emoji.twemoji
+#     emoji_generator: !!python/name:materialx.emoji.to_svg
+- pymdownx.highlight
+- pymdownx.inlinehilite
+- pymdownx.keys
+# - pymdownx.magiclink:
+#     repo_url_shorthand: true
+#     user: username
+#     repo: reponame
+# - pymdownx.mark
+# - pymdownx.smartsymbols
+# - pymdownx.snippets:
+#     check_paths: true
+- pymdownx.superfences
+- pymdownx.tabbed
+- pymdownx.tasklist:
+    custom_checkbox: true
+- pymdownx.tilde
+
+extra_javascript:
+# For pymdownx.arithmatex to work
+- js/config.js
+- https://polyfill.io/v3/polyfill.min.js?features=es6
+- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
+# Navigation
+nav:
+- Home: index.md
+- Standard flow: standard-flow.md
+- Automation flow: automation-flow.md
+- Installation: installation.md
+- Usage: usage.md
+- Data: data.md
