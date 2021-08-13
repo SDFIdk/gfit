@@ -22,8 +22,8 @@ def main():
         ]
     subsets = make_subsets(lines)
 
-    for (ix, subset) in subsets.items():
-        info = get_cwd_info(ix)
+    for (line_index, subset) in subsets.items():
+        info = get_cwd_info(line_index=line_index)
         
         # Store the subset of lines to fit to
         with open(info.cwd / config.get('gps_measurements_subset'), 'w+', encoding='ascii') as fsock:
@@ -31,7 +31,7 @@ def main():
 
         # Store the relevant data from the excluded line
         with open(info.cwd / config.get('point_excluded'), 'w+') as fsock:
-            fsock.write(make_point_line(lines[ix]))
+            fsock.write(make_point_line(lines[info.line_index]))
 
 
 if __name__ == '__main__':

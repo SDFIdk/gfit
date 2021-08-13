@@ -24,22 +24,33 @@ infile_content = dict(
 
 
 
-input_dir = pathlib.Path(__file__).absolute() / 'input'
+root = pathlib.Path(__file__).absolute().parent
+output_path = root / '__testing__'
+output_path.mkdir(exist_ok=True)
 
 
 def load_config():
-    config_path = pathlib.Path(__file__).absolute().parent.parent / 'config.yaml'
+    config_path = root / 'config.yaml'
     assert config_path.is_file(), f'Config file path {config_path!r} does not exist.'
     with open(config_path) as fsock:
         return yaml.safe_load(fsock)
 
 
-def get_cwd_info(ix):
-    line_number = f'{ix + 1:02d}'
-    cwd = pathlib.Path(line_number)
+def get_cwd_info(*, line_number: int = None, line_index: int = None) -> 'CWDInfo':
+    if line_number is not None:
+        assert line_number > 0, f'Line numbers can not be zero or negative. Got {line_number!r}'
+        line_index = line_number - 1
+    else:
+        assert line_index >= 0, f'Line index can not be negative. Got {line_index!r}'
+        line_number = line_index + 1
+
+    line_name = f'{line_number:03d}'
+    cwd = output_path / line_name
     cwd.mkdir(exist_ok=True)
     return type('CWDInfo', (), dict(
+            line_index=line_index,
             line_number=line_number,
+            line_name=line_name,
             cwd=cwd,
         )
     )
@@ -48,16 +59,16 @@ def get_cwd_info(ix):
 def main():
 
     try:
-        ix, *programs = sys.argv[1:]
-        ix = int(ix)
+        line_number, *programs = sys.argv[1:]
+        line_number = int(line_number)
     except Exception as e:
         raise SystemExit(e)
 
     animation = it.cycle('|/-\\')
-    info = get_cwd_info(ix)
+    info = get_cwd_info(line_number=line_number)
     config = load_config()
 
-    print(f'Running programs {programs!r} for line index {ix!r}')
+    print(f'Running programs {programs!r} for line {info.line_number!r}')
 
     for program in programs:
         assert program in infile_content, f'{program!r} not in {set(infile_content.keys())!r}.'
