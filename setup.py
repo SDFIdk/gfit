@@ -6,7 +6,7 @@ from setuptools import (
 
 setup(
     name="gfit",
-    version="0.1.0",
+    version="0.2.0",
     description="Geoid Fit Cross Validation (GFIT)",
     url="https://github.com/Kortforsyningen/diveg",
     author="Joachim Mortensen (SDFE, GRF) <joamo@sdfe.dk>",

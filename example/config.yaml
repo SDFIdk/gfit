@@ -10,13 +10,19 @@ output_path: __cv__
 geoid_gravimetric: c:\x-val\input\gravgeoid2021.gri
 gps_measurements: c:\x-val\input\158_7p_4mm.n
 
+# Configure general input for fitgeoid1 input files
 # File names for generated input and output in each work directory
 geoid_fitted: fg7p_4.gri
 gps_measurements_subset: 158_7p_4mm_subset.n
+# Other parameters
+sigma: 0.004
 
+# Configure general input for gbin input files
 geoid_fitted_bin: fg7p_4.bin
 
+# Configure general input for geoid input files
 point_excluded: point_excluded.dat
 point_interpolated: point_interpolated.dat
 
+# Configure filename for gathered output created by cv-gather
 points_gathered: 158_7p_4mm_gathered.csv

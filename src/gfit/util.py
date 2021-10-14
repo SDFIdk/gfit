@@ -36,13 +36,18 @@ def add_infix(fname, infix):
     return f'{fname.stem}_{infix}{fname.suffix}'
 
 
-def input_fitgeoid1(geoid_gravimetric, gps_measurements_subset, geoid_fitted, **kwargs):
+def input_fitgeoid1(
+    geoid_gravimetric,
+    gps_measurements_subset,
+    geoid_fitted,
+    sigma=0.004,
+    **kwargs):
     return f"""\
 {geoid_gravimetric}
 {gps_measurements_subset}
 {geoid_fitted}
 20 1 1 t
-60.0 0.004
+60.0 {sigma}
 53.50 58.00 7.00 17.000020  0.010 0.0166667
 """
 
