@@ -1,9 +1,27 @@
-## Aktivér `conda`-miljøet `gfit`
+## Almindelig arbejdsgang for en ny kørsel
 
-*   `conda activate gfit`
-*   Kopiér `example/config.yaml` til en pladsering, hvorfra du vil køre programmet.
-*   Skift til denne mappe.
-*   Redigér din version af `config.yaml`, så stierne til data og programmer er sat korrekt, samt at stien til mappen med resultaterne er sat til noget, der giver mening for dig.
+*   Fra en Anaconda-terminal, aktivér `conda`-miljøet `gfit`
+    
+        conda activate gfit
+
+*   I samme terminal, skift mappe til dén pladsering, hvorfra du vil køre programmet.
+
+        cd /sti/til/din/mappe
+
+*   Kopiér standard-konfigurationsfilen til denne mappe.
+
+        cp c:\gfit\example\config.yaml .
+
+    Har du anvendt programmerne før og ønsker en separat kørsel, så kopiér gerne den tidligere konfiguration.
+
+    Vær dog opmærksom på, at konfigurationsfilen har de parametre, der passer til dén version af koden, du anvender.
+
+*   Redigér konfigurationsfilen, så
+
+    -   stierne til data og programmer er sat korrekt
+    -   stien til mappen med resultaterne er sat til noget, der giver mening for dig.
+    -   parametre så som `sigma` er sat til dét, du har behov for.
+
 *   Kør kommandoerne.
 
 !!! tip "Tip til test"
